@@ -7,7 +7,7 @@ import SEO from '../constant/seo';
 import { getMovies } from '../helpers/fetch';
 import { Box, Button, Container, Row, Col, Text, Image, Footer, InfiniteScroll, MovieCard } from '../ui'
 
-export default function Home({ movies }) {
+function Home({ movies }) {
   const [stateMovies, setStateMovies] = useState(movies);
   const [stateListMovies, setStateListMovies] = useState(movies && movies.Search);
   const [stateCategory, setStateCategory] = useState('batman');
@@ -54,9 +54,9 @@ export default function Home({ movies }) {
                 />
               </Box>
           )})
-        }
+        || null}
         <InfiniteScroll
-          status={stateMovies.Response === 'True' ? 'success' : 'loading'}
+          status={stateMovies && stateMovies.Response === 'True' ? 'success' : 'loading'}
           triggerFunction={handleLoadMore}
           spinnerSize={36}
         />
@@ -66,12 +66,12 @@ export default function Home({ movies }) {
   )
 }
 
-export async function getStaticProps() {
-  const movies = await getMovies('batman');
 
+Home.getInitialProps = async () => {
+  const movies = await getMovies('batman');
   return {
-    props: {
-      movies
-    }
+    movies
   }
 }
+
+export default Home;
