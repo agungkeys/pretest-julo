@@ -50,7 +50,7 @@ function Home({ movies }) {
                   title={item.Title}
                   image={item.Poster}
                   category={item.Type}
-                  release={item.Release}
+                  release={item.Year}
                 />
               </Box>
           )})

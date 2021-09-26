@@ -24,7 +24,7 @@ export default function Slug({ movie }) {
             btnLink='/'
           />
           :
-          <Box isBlock paddingY={3}>
+          <Box isBlock paddingY={3} marginBottom={3}>
             <Text isBlock paddingBottom={2} fontSizeVariant='lg' fontWeightVariant='bold'>{`${movie.Title} - ${movie.Year}`}</Text>
             <Image 
               src={movie.Poster}
