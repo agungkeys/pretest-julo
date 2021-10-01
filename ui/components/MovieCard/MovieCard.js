@@ -7,10 +7,13 @@ import Text from '../../elements/Text';
 import NextLink from '../../elements/NextLink';
 import Image from '../../elements/Image';
 
-const  MovieCard = ({id, title, image, category, release}) => (
+const  MovieCard = ({id, title, image, category, release, link}) => (
 
     <Box isBlock marginBottom={3} borderColorVariant="grey" isRounded withBorder>
-       <NextLink link={`/${id}`} customCSS='width: 100%;'>
+       <NextLink 
+        link={link} 
+        customCSS='width: 100%;'
+      >
         <Row flexDirection='row' gutterSize='xs' customCSS="width: 100%;">
           <Col md={4}>
             <Image 

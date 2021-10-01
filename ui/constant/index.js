@@ -12,7 +12,7 @@ import TEXT_CASE from './textCase';
 import TEXT_ALIGN from './textAlign';
 import FONT_STYLE from './fontStyle';
 import POSITION from './position';
-// import ALERT_STATUS from './alertStatus';
+import ALERT_STATUS from './alertStatus';
 import LINE_HEIGHT from './lineHeight';
 // import STATUS_TYPES from './statusTypes';
 
@@ -32,7 +32,7 @@ export {
   TEXT_ALIGN,
   FONT_STYLE,
   POSITION,
-  // ALERT_STATUS,
+  ALERT_STATUS,
   LINE_HEIGHT,
   // STATUS_TYPES
 };

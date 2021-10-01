@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, BottomNavigation } from '../ui';
+import { Box, Navbar, BottomNavigation, Alert} from '../ui';
 
 function MainLayout(props){
   const { 
@@ -17,19 +17,21 @@ function MainLayout(props){
       id: 0,
       label: 'Home',
       image: '/home.svg',
-      link: '/'
+      link: {
+        pathname: '/',
+        query: {},
+        asPath: '/'
+      }
     },
     {
       id: 1,
-      label: 'Search',
-      image: '/search.svg',
-      link: '/search'
-    },
-    {
-      id: 2,
       label: 'Favorite',
       image: '/favorite.svg',
-      link: '/favorite'
+      link: {
+        pathname: '/favorite',
+        query: {},
+        asPath: '/favorite'
+      },
     }
   ];
 

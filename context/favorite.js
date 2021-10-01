@@ -6,12 +6,11 @@ const FavoriteDispatchContext = createContext();
 const SET_FAVORITE = "SET_FAVORITE";
 
 const initialState = {
-  total_items: 0,
-  total_unique_items: 0,
-  line_items: []
+  favorite_items: []
 }
 
 const reducer = (state, action) => {
+console.log("🚀 ~ file: favorite.js ~ line 14 ~ reducer ~ state", state)
   switch(action.type) {
     case SET_FAVORITE:
       return { ...state, ...action.payload };
@@ -27,16 +26,12 @@ export const FavoriteProvider = ({children}) => {
     getFavorite()
   }, []);
 
-  const setFavorite = (payload) => dispatch({type: SET_FAVORITE, payload});
+  function setFavorite (payload){
+    dispatch({type: SET_FAVORITE, payload});
+  } 
 
-  const getFavorite = async () => {
-    try {
-      // get data from api
-      // const cart = await commerce.cart.retrieve()
-      // setFavorite(cart)
-    } catch (err) {
-      console.log(err);
-    }
+  function getFavorite(){
+    
   }
 
   return (

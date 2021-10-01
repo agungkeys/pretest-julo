@@ -1,8 +1,10 @@
 /** elements */
+import Absolute from './elements/Absolute';
+import Alert from './elements/Alert';
 import Anchor from './elements/Anchor';
 import BaseButton from './elements/BaseButton';
 import Box from './elements/Box';
-import Button from './elements/Button/Button';
+import Button from './elements/Button';
 import Container from './elements/Container';
 import Col from './elements/Col';
 import Image from './elements/Image';
@@ -18,9 +20,12 @@ import InfiniteScroll from './components/InfiniteScroll';
 import BottomNavigation from './components/BottomNavigation';
 import EmptyState from './components/EmptyState';
 import MovieCard from './components/MovieCard';
+import Toast from './components/Toast';
 
 export {
   // elements
+  Absolute,
+  Alert,
   Anchor,
   BaseButton,
   Box,
@@ -40,4 +45,5 @@ export {
   InfiniteScroll,
   Navbar,
   MovieCard,
+  Toast,
 };

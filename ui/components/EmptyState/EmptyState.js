@@ -9,7 +9,7 @@ import Image from '../../elements/Image';
 const EmptyState = ({image, title, btnLabel, btnLink}) => (
   <Box padding={3} customCSS='text-align: center;'>
     <Image src={image} width={100} alt={title} />
-    <Text paddingTop={1} isBlock>{title}</Text>
+    <Text paddingTop={1} isBlock fontSizeVariant="md" colorVariant="grey">{title}</Text>
     <Button as={NextLink} colorVariant="grey-soft" size='sm' marginTop={1} link={btnLink}>{btnLabel}</Button>
   </Box>
 );

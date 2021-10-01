@@ -180,8 +180,8 @@ export const propsOutlinedStyle = ({ theme, colorVariant }) => {
       background-color: ${primaryButtonColor};
       border: 1px solid ${primaryButtonBorderColor};
       &:not(:disabled):hover {
-        color: ${primaryButtonColor}
-        background-color: ${primaryButtonBgColor}
+        color: ${primaryButtonColor};
+        background-color: ${primaryButtonBgColor};
       }
     `,
     grey: `
@@ -189,8 +189,8 @@ export const propsOutlinedStyle = ({ theme, colorVariant }) => {
       background-color: ${greyButtonColor};
       border: 1px solid ${greyButtonBorderColor};
       &:not(:disabled):hover {
-        color: ${greyButtonColor}
-        background-color: ${greyButtonBgColor}
+        color: ${greyButtonColor};
+        background-color: ${greyButtonBgColor};
       }
     `,
     ['grey-soft']: `
@@ -198,8 +198,8 @@ export const propsOutlinedStyle = ({ theme, colorVariant }) => {
       background-color: ${greyButtonColor};
       border: 1px solid ${greyButtonBorderColor};
       &:not(:disabled):hover {
-        color: ${greyButtonColor}
-        background-color: ${greyButtonBorderColor}
+        color: ${greyButtonColor};
+        background-color: ${greyButtonBorderColor};
       }
     `,
     caution: () => `
@@ -207,8 +207,8 @@ export const propsOutlinedStyle = ({ theme, colorVariant }) => {
       background-color: ${cautionButtonColor};
       border: 1px solid ${cautionButtonBorderColor};
       &:not(:disabled):hover {
-        color: ${cautionButtonColor}
-        background-color: ${cautionButtonBgColor}
+        color: ${cautionButtonColor};
+        background-color: ${cautionButtonBgColor};
       }
     `,
     caution_light: `
@@ -216,8 +216,8 @@ export const propsOutlinedStyle = ({ theme, colorVariant }) => {
       background-color: ${cautionLightButtonColor};
       border: 1px solid ${cautionLightButtonBorderColor};
       &:not(:disabled):hover {
-        color: ${cautionLightButtonColor}
-        background-color: ${cautionLightButtonBgColor}
+        color: ${cautionLightButtonColor};
+        background-color: ${cautionLightButtonBgColor};
       }
     `,
     primary_darker: `
@@ -225,8 +225,8 @@ export const propsOutlinedStyle = ({ theme, colorVariant }) => {
       background-color: ${primaryButtonColor};
       border: 1px solid ${primaryButtonBorderColor};
       &:not(:disabled):hover {
-        color: ${primaryDarkerButtonColor}
-        background-color: ${primaryDarkerButtonBgColor}
+        color: ${primaryDarkerButtonColor};
+        background-color: ${primaryDarkerButtonBgColor};
         border: 1px solid ${primaryButtonBorderColor};
       }
     `,
@@ -235,8 +235,8 @@ export const propsOutlinedStyle = ({ theme, colorVariant }) => {
       background-color: ${dangerButtonColor};
       border: 1px solid ${dangerButtonBgColor};
       &:not(:disabled):hover {
-        color: ${dangerButtonColor}
-        background-color: ${dangerButtonBgColor}
+        color: ${dangerButtonColor};
+        background-color: ${dangerButtonBgColor};
         border: 1px solid ${dangerButtonBgColor};
       }
     `,
