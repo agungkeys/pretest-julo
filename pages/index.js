@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import MainLayout from '../layout/MainLayout';
 import MainHead from '../layout/MainHead';
 import SEO from '../constant/seo';
@@ -12,7 +11,6 @@ function Home({ movies }) {
   const [stateListMovies, setStateListMovies] = useState([]);
   const [stateCategory, setStateCategory] = useState('batman');
   const [statePage, setStatePage] = useState(1)
-  console.log("🚀 ~ file: index.js ~ line 15 ~ Home ~ statePage", statePage)
   
   async function handleGetMoviesByCategory(cat){
     setStatePage(1);
@@ -55,9 +53,6 @@ function Home({ movies }) {
           <Button onClick={() => handleGetMoviesByCategory('spiderman')} marginLeft={1} colorVariant='grey'>Spiderman</Button>
           <Button onClick={() => handleGetMoviesByCategory('game of thrones')} marginLeft={1} colorVariant='grey'>Game of Thrones</Button>
         </Box>
-        {console.log("🚀 ~ file: index.js ~ line 54 ~ Home ~ storeMovies", storeMovies)}
-        {console.log("🚀 ~ file: index.js ~ line 54 ~ Home ~ storeMovies.totalResults", storeMovies && storeMovies.totalResults)}
-        {console.log("🚀 ~ file: index.js ~ line 54 ~ Home ~ storeMovies length ==>", stateListMovies && stateListMovies.length)}
         {storeMovies && 
           storeMovies.Response === 'True' &&
           stateListMovies.length && stateListMovies.map((item, key) => {
@@ -93,7 +88,6 @@ function Home({ movies }) {
     </MainLayout>
   )
 }
-
 
 Home.getInitialProps = async () => {
   const movies = await getMovies('batman');

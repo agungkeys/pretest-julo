@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import MainLayout from '../layout/MainLayout';
 import MainHead from '../layout/MainHead';
 import SEO from '../constant/seo';
 import { getMovie } from '../helpers/fetch';
-import { Box, Button, Container, Text, Toast, Navbar, NextLink, BottomNavigation, Footer, Image, EmptyState } from '../ui';
+import { Box, Button, Container, Text, Toast, Image, EmptyState } from '../ui';
 import { useFavoriteDispatch, useFavoriteState } from '../context/favorite';
-
 
 export default function Slug({ movie }) {
   const {setFavorite} = useFavoriteDispatch();
@@ -18,16 +16,18 @@ export default function Slug({ movie }) {
     text: '',
     autoCloseDuration: 3000,
   });
-  console.log("🚀 ~ file: [id].js ~ line 17 ~ Slug ~ stateToast", stateToast)
-  console.log("🚀 ~ file: [id].js ~ line 15 ~ Slug ~ state", state)
 
   function handleSubmitFavorite(movie){
-    setFavorite(
-      {
+    const movieId = movie.imdbID;
+    const found = state.favorite_items.find(el => el.imdbID === movieId);
+    if(found){
+      handleAddFavoriteToast('danger', `${movie.Title} ${movie.Year} Already added to your favorite`, 3000);
+    }else{
+      setFavorite({
         favorite_items: [movie, ...state.favorite_items]
-      }
-    );
-    handleAddFavorite('success', 'Movie successfully add to your favorite', 3000);
+      });
+      handleAddFavoriteToast('success', `${movie.Title} ${movie.Year} Successfully add to your favorite`, 3000);
+    }
   }
 
   function closeToast(){
@@ -39,7 +39,7 @@ export default function Slug({ movie }) {
     })
   }
 
-  function handleAddFavorite(type, text, autoCloseDuration) {
+  function handleAddFavoriteToast(type, text, autoCloseDuration) {
     setStateToast({
       status: true,
       type: type || 'danger',
@@ -47,6 +47,7 @@ export default function Slug({ movie }) {
       autoCloseDuration: autoCloseDuration
     });
   }
+
   return (
     <MainLayout isHeader isFooter> 
       <MainHead seo={SEO.DEFAULT} />
@@ -76,7 +77,7 @@ export default function Slug({ movie }) {
                   height={14}
                   marginRight={1}
                 />
-                Favorite
+                Add to Favorite
               </Box>
             </Button>
           </Box>
@@ -84,7 +85,7 @@ export default function Slug({ movie }) {
       </Container>
       {stateToast && stateToast.status &&
         <Toast type={stateToast.type} autoCloseDuration={stateToast.autoCloseDuration} onClose={closeToast}>
-          <Text fontSizeVariant='md' fontWeightVariant='semiBold'>{stateToast.text}</Text>
+          <Text fontSizeVariant='md'>{stateToast.text}</Text>
         </Toast>
       }
     </MainLayout>

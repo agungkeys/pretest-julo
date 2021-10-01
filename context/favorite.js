@@ -10,7 +10,6 @@ const initialState = {
 }
 
 const reducer = (state, action) => {
-console.log("🚀 ~ file: favorite.js ~ line 14 ~ reducer ~ state", state)
   switch(action.type) {
     case SET_FAVORITE:
       return { ...state, ...action.payload };
